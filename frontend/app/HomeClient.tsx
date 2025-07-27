@@ -118,7 +118,7 @@ export default function HomeClient({ candidates }: { candidates: any[] }) {
               candidate={c}
               voted={voted}
               onVote={session ? () => handleVote(c.id) : () => signIn('google')}
-              isVoted={voted && c.id.toString() === voted}
+              isVoted={Boolean(voted && c.id.toString() === voted)}
               session={session}
               lang={lang}
               text={TEXT[lang]}
